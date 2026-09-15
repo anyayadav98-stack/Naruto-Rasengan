@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasengan</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <video  id="cam"      class="layer" autoplay playsinline muted></video>
+  <canvas id="skeleton" class="layer"></canvas>
+  <div    class="vignette"></div>
+
+  <video class="rasengan" data-slot="0" src="assests/rasengan.mp4" muted autoplay loop playsinline preload="auto"></video>
+  <video class="rasengan" data-slot="1" src="assests/rasengan.mp4" muted autoplay loop playsinline preload="auto"></video>
+
+  <div id="title">
+    NARUTO <span id="credit">by Anya</span>
+  </div>
+
+  <div id="hint">Show your hand 🖐️</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

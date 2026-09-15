@@ -1,0 +1,99 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+.layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+#cam      { z-index: 0; }
+#skeleton { z-index: 2; pointer-events: none; }
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.rasengan {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1500px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0;
+  will-change: opacity, left, top;
+  z-index: 10;
+}
+
+#title {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  pointer-events: none;
+
+  font-family: 'Arial Black', Impact, system-ui, sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  color: #ff6a1a;
+  -webkit-text-stroke: 2px #1a0a00;
+  text-shadow:
+    0 0 12px #ff8a3d,
+    0 0 24px #ff5e1a,
+    2px 2px 0 #7a1e00;
+
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+#credit {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  color: #cfe9ff;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+#hint {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #cfe9ff;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  background: rgba(0,0,0,0.45);
+  padding: 6px 12px;
+  border-radius: 999px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* Chhote screens pe heading thoda chhota ho jaye */
+@media (max-width: 600px) {
+  #title { font-size: 36px; letter-spacing: 3px; }
+  #credit { font-size: 11px; }
+}
